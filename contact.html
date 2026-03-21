@@ -1,176 +1,477 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Contact Ndeiya House | Make a Booking Enquiry</title>
-<meta name="description" content="Get in touch with Ndeiya House to book a stay, event, wedding, or photoshoot near Nairobi. Call, WhatsApp, or send us an enquiry and we'll respond promptly."/>
-<link rel="stylesheet" href="style.css"/>
-<style>
-.contact-layout { display:grid; grid-template-columns:1fr 1.5fr; gap:5rem; align-items:start; }
-.contact-detail { display:flex; gap:1rem; align-items:flex-start; padding:1.5rem; background:var(--white); border-radius:var(--radius-lg); border:1px solid var(--cream-dark); margin-bottom:1rem; transition:var(--transition); text-decoration:none; }
-.contact-detail:hover { border-color:var(--navy-light); box-shadow:0 4px 20px rgba(49,79,115,0.08); transform:translateY(-2px); }
-.contact-detail-icon { width:44px;height:44px;background:var(--navy-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0; }
-.contact-detail-text strong { display:block; font-size:0.78rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-light); margin-bottom:0.2rem; }
-.contact-detail-text span { font-size:0.92rem; color:var(--text-mid); }
-.map-placeholder { height:320px; background:var(--cream-dark); border-radius:var(--radius-lg); display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;color:var(--text-light);font-size:0.85rem;margin-top:2rem;border:2px dashed var(--cream-dark);text-align:center;padding:2rem; }
-.map-placeholder a { color:var(--navy); font-weight:500; }
-.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
-.form-submit { width:100%; padding:1rem; font-size:0.9rem; justify-content:center; }
-.booking-terms { background:var(--cream); border-radius:var(--radius-lg); padding:1.5rem; margin-top:2rem; }
-.booking-terms h4 { font-family:var(--font-body); font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--navy); margin-bottom:0.75rem; }
-.booking-terms ul { display:flex; flex-direction:column; gap:0.4rem; }
-.booking-terms li { font-size:0.85rem; color:var(--text-mid); display:flex; gap:0.5rem; }
-.booking-terms li::before { content:'·'; color:var(--orange); font-weight:700; flex-shrink:0; }
-.wa-cta { background:linear-gradient(135deg,#128C7E,#25D366); color:var(--white); padding:1.4rem 1.5rem; border-radius:var(--radius-lg); display:flex; align-items:center; gap:1rem; margin-top:1.5rem; text-decoration:none; transition:var(--transition); }
-.wa-cta:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(37,211,102,0.35); }
-.wa-cta svg { width:32px;height:32px;fill:white;flex-shrink:0; }
-.wa-cta-text strong { display:block; font-size:0.92rem; font-weight:500; }
-.wa-cta-text span { font-size:0.8rem; opacity:0.85; }
-@media(max-width:900px){ .contact-layout { grid-template-columns:1fr; } .form-row { grid-template-columns:1fr; } }
-</style>
-</head>
-<body>
-<nav class="nav"><div class="nav-inner"><a href="index.html" class="nav-logo"><img src="logo.png" alt="Ndeiya House" /></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="rates.html">Rates</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="contact.html" class="btn btn-outline active">Book Now</a></li></ul><button class="nav-toggle"><span></span><span></span><span></span></button></div></nav>
-<div class="nav-mobile"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="rates.html">Rates</a><a href="gallery.html">Gallery</a><a href="faqs.html">FAQs</a><a href="contact.html" class="btn btn-primary">Book Now</a></div>
-
-<div class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1400&q=80')"></div>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content"><p class="eyebrow">We'd love to host you</p><h1>Get in Touch</h1></div>
-</div>
-
-<section class="section" id="enquiry">
-  <div class="container">
-    <div class="contact-layout">
-      <!-- LEFT: CONTACT INFO -->
-      <div>
-        <p class="eyebrow reveal">Contact details</p>
-        <h2 class="reveal reveal-delay-1" style="font-size:2rem;">We're here to help</h2>
-        <div class="divider reveal reveal-delay-2"></div>
-        <p class="reveal reveal-delay-2" style="margin-bottom:2rem;">Whether you have a quick question or are ready to book, reach out and we'll get back to you within 24 hours.</p>
-
-        <a href="tel:+254712630306" class="contact-detail reveal">
-          <div class="contact-detail-icon">📞</div>
-          <div class="contact-detail-text"><strong>Phone</strong><span>+254 712 630 306</span></div>
-        </a>
-        <a href="tel:+254722946628" class="contact-detail reveal reveal-delay-1">
-          <div class="contact-detail-icon">📞</div>
-          <div class="contact-detail-text"><strong>Phone</strong><span>+254 722 946 628</span></div>
-        </a>
-        <a href="tel:+254728382690" class="contact-detail reveal reveal-delay-1">
-          <div class="contact-detail-icon">📞</div>
-          <div class="contact-detail-text"><strong>Phone</strong><span>+254 728 382 690</span></div>
-        </a>
-        <a href="mailto:ndeiyahselimited@yahoo.com" class="contact-detail reveal reveal-delay-2">
-          <div class="contact-detail-icon">✉️</div>
-          <div class="contact-detail-text"><strong>Email</strong><span>ndeiyahselimited@yahoo.com</span></div>
-        </a>
-        <div class="contact-detail reveal reveal-delay-2" style="cursor:default;">
-          <div class="contact-detail-icon">📍</div>
-          <div class="contact-detail-text"><strong>Location</strong><span>Renguti Link, Off Dagoretti Road<br>P.O. Box 2049 – 00902, Kikuyu</span></div>
-        </div>
-        <a href="https://instagram.com/ndeiyahouse" target="_blank" class="contact-detail reveal reveal-delay-3">
-          <div class="contact-detail-icon">📷</div>
-          <div class="contact-detail-text"><strong>Instagram &amp; Facebook</strong><span>@ndeiyahouse</span></div>
-        </a>
-
-        <a href="https://wa.me/254712630306?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20Ndeiya%20House." target="_blank" class="wa-cta reveal reveal-delay-3">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          <div class="wa-cta-text"><strong>Chat with us on WhatsApp</strong><span>Fastest way to get a response</span></div>
-        </a>
-
-        <div class="map-placeholder reveal reveal-delay-4">
-          <div style="font-size:2rem;">📍</div>
-          <div>
-            <strong style="color:var(--navy-deeper);display:block;margin-bottom:0.3rem;">Renguti Link, Off Dagoretti Road</strong>
-            <span>Replace this placeholder with an embedded Google Maps iframe pointing to Ndeiya House's exact location.</span>
-            <br/><br/>
-            <a href="https://maps.google.com/?q=Renguti+Link+Dagoretti+Road+Kikuyu+Kenya" target="_blank">Open in Google Maps →</a>
-          </div>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Contact Ndeiya House | Make a Booking Enquiry</title>
+    <meta
+      name="description"
+      content="Get in touch with Ndeiya House to book a stay, event, wedding, or photoshoot near Nairobi. Call, WhatsApp, or send us an enquiry and we'll respond promptly."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 5rem;
+        align-items: start;
+      }
+      .contact-detail {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        padding: 1.5rem;
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--cream-dark);
+        margin-bottom: 1rem;
+        transition: var(--transition);
+        text-decoration: none;
+      }
+      .contact-detail:hover {
+        border-color: var(--navy-light);
+        box-shadow: 0 4px 20px rgba(49, 79, 115, 0.08);
+        transform: translateY(-2px);
+      }
+      .contact-detail-icon {
+        width: 44px;
+        height: 44px;
+        background: var(--navy-pale);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+      .contact-detail-text strong {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-light);
+        margin-bottom: 0.2rem;
+      }
+      .contact-detail-text span {
+        font-size: 0.92rem;
+        color: var(--text-mid);
+      }
+      .map-placeholder {
+        height: 320px;
+        border-radius: var(--radius-lg);
+        margin-top: 2rem;
+        overflow: hidden;
+        border: 1px solid var(--cream-dark);
+      }
+      .map-placeholder iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+      }
+      .form-submit {
+        width: 100%;
+        padding: 1rem;
+        font-size: 0.9rem;
+        justify-content: center;
+      }
+      .booking-terms {
+        background: var(--cream);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem;
+        margin-top: 2rem;
+      }
+      .booking-terms h4 {
+        font-family: var(--font-body);
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--navy);
+        margin-bottom: 0.75rem;
+      }
+      .booking-terms ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      .booking-terms li {
+        font-size: 0.85rem;
+        color: var(--text-mid);
+        display: flex;
+        gap: 0.5rem;
+      }
+      .booking-terms li::before {
+        content: "·";
+        color: var(--orange);
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .wa-cta {
+        background: linear-gradient(135deg, #128c7e, #25d366);
+        color: var(--white);
+        padding: 1.4rem 1.5rem;
+        border-radius: var(--radius-lg);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+      .wa-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(37, 211, 102, 0.35);
+      }
+      .wa-cta svg {
+        width: 32px;
+        height: 32px;
+        fill: white;
+        flex-shrink: 0;
+      }
+      .wa-cta-text strong {
+        display: block;
+        font-size: 0.92rem;
+        font-weight: 500;
+      }
+      .wa-cta-text span {
+        font-size: 0.8rem;
+        opacity: 0.85;
+      }
+      @media (max-width: 900px) {
+        .contact-layout {
+          grid-template-columns: 1fr;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo"
+          ><img src="logo.png" alt="Ndeiya House"
+        /></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="rates.html">Rates</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+          <li>
+            <a href="contact.html" class="btn btn-outline active">Book Now</a>
+          </li>
+        </ul>
+        <button class="nav-toggle">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </nav>
+    <div class="nav-mobile">
+      <a href="index.html">Home</a><a href="about.html">About</a
+      ><a href="services.html">Services</a><a href="rates.html">Rates</a
+      ><a href="gallery.html">Gallery</a><a href="faqs.html">FAQs</a
+      ><a href="contact.html" class="btn btn-primary">Book Now</a>
+    </div>
 
-      <!-- RIGHT: FORM -->
-      <div>
-        <p class="eyebrow reveal">Enquiry form</p>
-        <h2 class="reveal reveal-delay-1" style="font-size:2rem;">Send us a message</h2>
-        <div class="divider reveal reveal-delay-2"></div>
-        <p class="reveal reveal-delay-2" style="margin-bottom:2rem;">Fill in the form below and we'll get back to you within 24 hours. All fields marked * are required.</p>
-
-        <form class="enquiry-form reveal reveal-delay-2">
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="name">Full name *</label>
-              <input class="form-control" type="text" id="name" name="name" placeholder="Your full name" required/>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="phone">Phone / WhatsApp *</label>
-              <input class="form-control" type="tel" id="phone" name="phone" placeholder="+254 7XX XXX XXX" required/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="email">Email address</label>
-            <input class="form-control" type="email" id="email" name="email" placeholder="your@email.com"/>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="type">Type of enquiry *</label>
-            <select class="form-control" id="type" name="type" required>
-              <option value="" disabled selected>Select a service…</option>
-              <option value="Accommodation">Accommodation / Stay</option>
-              <option value="Wedding">Wedding</option>
-              <option value="Event">Event or Party</option>
-              <option value="Team Building">Team Building</option>
-              <option value="Photoshoot">Photoshoot</option>
-              <option value="Farm Tour">Farm / Educational Tour</option>
-              <option value="Other">Other / General Enquiry</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="date">Preferred date *</label>
-              <input class="form-control" type="date" id="date" name="date" required/>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="guests">Number of guests</label>
-              <input class="form-control" type="number" id="guests" name="guests" placeholder="e.g. 14" min="1"/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="message">Message / additional details</label>
-            <textarea class="form-control" id="message" name="message" placeholder="Tell us anything else we should know — dietary requirements, special requests, questions…" rows="5"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary form-submit">Send Enquiry →</button>
-        </form>
-
-        <div class="booking-terms reveal reveal-delay-3">
-          <h4>Booking terms (quick reminder)</h4>
-          <ul>
-            <li>50% deposit required to secure your date</li>
-            <li>Balance due one day before your event</li>
-            <li>We accept M-Pesa and bank transfers</li>
-            <li>Bookings confirmed only upon receipt of deposit</li>
-          </ul>
-        </div>
+    <div class="page-hero">
+      <div
+        class="page-hero-bg"
+        style="
+          background-image: url(&quot;https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1400&q=80&quot;);
+        "
+      ></div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <p class="eyebrow">We'd love to host you</p>
+        <h1>Get in Touch</h1>
       </div>
     </div>
-  </div>
-</section>
 
-<footer class="footer"><div class="container"><div class="footer-grid"><div><div class="footer-logo"><img src="logo.png" alt="Ndeiya House" /></div><p class="footer-tagline">"Some moments are meant to be celebrated in a place that feels like home."</p><div class="social-links"><a href="https://instagram.com/ndeiyahouse" target="_blank">ig</a><a href="https://facebook.com/ndeiyahouse" target="_blank">fb</a></div></div><div><h5>Explore</h5><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="rates.html">Rates</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="faqs.html">FAQs</a></li></ul></div><div><h5>Services</h5><ul class="footer-links"><li><a href="services.html#accommodation">Accommodation</a></li><li><a href="services.html#weddings">Weddings</a></li><li><a href="services.html#events">Events</a></li><li><a href="services.html#team">Team Building</a></li><li><a href="services.html#photoshoots">Photoshoots</a></li></ul></div><div><h5>Get in touch</h5><div class="footer-contact"><div class="footer-contact-item"><strong>Phone</strong>+254 712 630 306</div><div class="footer-contact-item"><strong>Email</strong>ndeiyahselimited@yahoo.com</div><div class="footer-contact-item"><strong>Location</strong>Renguti Link, Off Dagoretti Rd</div></div></div></div><div class="footer-bottom"><p>© 2026 Ndeiya House. All rights reserved.</p></div></div></footer>
-<a href="https://wa.me/254712630306" class="wa-float" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
-<script src="script.js"></script>
-<script>
-// Pre-fill type dropdown from URL query param
-window.addEventListener('DOMContentLoaded', () => {
-  const params = new URLSearchParams(location.search);
-  const type = params.get('type');
-  if (type) {
-    const sel = document.getElementById('type');
-    for (const opt of sel.options) {
-      if (opt.value === type) { sel.value = type; break; }
-    }
-  }
-});
-</script>
-</body>
+    <section class="section" id="enquiry">
+      <div class="container">
+        <div class="contact-layout">
+          <!-- LEFT: CONTACT INFO -->
+          <div>
+            <p class="eyebrow reveal">Contact details</p>
+            <h2 class="reveal reveal-delay-1" style="font-size: 2rem">
+              We're here to help
+            </h2>
+            <div class="divider reveal reveal-delay-2"></div>
+            <p class="reveal reveal-delay-2" style="margin-bottom: 2rem">
+              Whether you have a quick question or are ready to book, reach out
+              and we'll get back to you within 24 hours.
+            </p>
+
+            <a
+              href="tel:+254722946628"
+              class="contact-detail reveal reveal-delay-1"
+            >
+              <div class="contact-detail-icon">📞</div>
+              <div class="contact-detail-text">
+                <strong>Phone</strong><span>+254 722 946 628</span>
+              </div>
+            </a>
+
+            <a
+              href="mailto:ndeiyahselimited@yahoo.com"
+              class="contact-detail reveal reveal-delay-2"
+            >
+              <div class="contact-detail-icon">✉️</div>
+              <div class="contact-detail-text">
+                <strong>Email</strong><span>ndeiyahselimited@yahoo.com</span>
+              </div>
+            </a>
+            <div
+              class="contact-detail reveal reveal-delay-2"
+              style="cursor: default"
+            >
+              <div class="contact-detail-icon">📍</div>
+              <div class="contact-detail-text">
+                <strong>Location</strong
+                ><span
+                  >Renguti Link, Off Dagoretti Road<br />P.O. Box 2049 – 00902,
+                  Kikuyu</span
+                >
+              </div>
+            </div>
+     
+
+            <a
+              href="https://wa.me/254722946628?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20Ndeiya%20House."
+              target="_blank"
+              class="wa-cta reveal reveal-delay-3"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                />
+              </svg>
+              <div class="wa-cta-text">
+                <strong>Chat with us on WhatsApp</strong
+                ><span>Fastest way to get a response</span>
+              </div>
+            </a>
+
+            <div class="map-placeholder reveal reveal-delay-4">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3988.9024074479626!2d36.6001206!3d-1.2277119!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182ee17bddcec6eb%3A0x3b309bbda5e09bb4!2sNdeiya%20House%20Limited!5e0!3m2!1sen!2ske!4v1774101511185!5m2!1sen!2ske"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- RIGHT: FORM -->
+          <div>
+            <p class="eyebrow reveal">Enquiry form</p>
+            <h2 class="reveal reveal-delay-1" style="font-size: 2rem">
+              Send us a message
+            </h2>
+            <div class="divider reveal reveal-delay-2"></div>
+            <p class="reveal reveal-delay-2" style="margin-bottom: 2rem">
+              Fill in the form below and we'll get back to you within 24 hours.
+              All fields marked * are required.
+            </p>
+
+            <form class="enquiry-form reveal reveal-delay-2">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="name">Full name *</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your full name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="phone"
+                    >Phone / WhatsApp *</label
+                  >
+                  <input
+                    class="form-control"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+254 7XX XXX XXX"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email address</label>
+                <input
+                  class="form-control"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="type">Type of enquiry *</label>
+                <select class="form-control" id="type" name="type" required>
+                  <option value="" disabled selected>Select a service…</option>
+                  <option value="Accommodation">Accommodation / Stay</option>
+                  <option value="Wedding">Wedding</option>
+                  <option value="Event">Event or Party</option>
+                  <option value="Team Building">Team Building</option>
+                  <option value="Photoshoot">Photoshoot</option>
+                  <option value="Farm Tour">Farm / Educational Tour</option>
+                  <option value="Other">Other / General Enquiry</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="date">Preferred date *</label>
+                  <input
+                    class="form-control"
+                    type="date"
+                    id="date"
+                    name="date"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="guests"
+                    >Number of guests</label
+                  >
+                  <input
+                    class="form-control"
+                    type="number"
+                    id="guests"
+                    name="guests"
+                    placeholder="e.g. 14"
+                    min="1"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message"
+                  >Message / additional details</label
+                >
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  placeholder="Tell us anything else we should know — dietary requirements, special requests, questions…"
+                  rows="5"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary form-submit">
+                Send Enquiry →
+              </button>
+            </form>
+
+            <div class="booking-terms reveal reveal-delay-3">
+              <h4>Booking terms (quick reminder)</h4>
+              <ul>
+                <li>50% deposit required to secure your date</li>
+                <li>Balance due one day before your event</li>
+                <li>We accept M-Pesa and bank transfers</li>
+                <li>Bookings confirmed only upon receipt of deposit</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-logo">
+              <img src="logo.png" alt="Ndeiya House" />
+            </div>
+            <p class="footer-tagline">
+              "Some moments are meant to be celebrated in a place that feels
+              like home."
+            </p>
+            <div class="social-links">
+              <a href="https://instagram.com/ndeiyahouse" target="_blank">ig</a
+              ><a href="https://facebook.com/ndeiyahouse" target="_blank">fb</a>
+            </div>
+          </div>
+          <div>
+            <h5>Explore</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="rates.html">Rates</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Services</h5>
+            <ul class="footer-links">
+              <li><a href="services.html#accommodation">Accommodation</a></li>
+              <li><a href="services.html#weddings">Weddings</a></li>
+              <li><a href="services.html#events">Events</a></li>
+              <li><a href="services.html#team">Team Building</a></li>
+              <li><a href="services.html#photoshoots">Photoshoots</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Get in touch</h5>
+            <div class="footer-contact">
+              <div class="footer-contact-item">
+                <strong>Phone</strong>+254 712 630 306
+              </div>
+              <div class="footer-contact-item">
+                <strong>Email</strong>ndeiyahselimited@yahoo.com
+              </div>
+              <div class="footer-contact-item">
+                <strong>Location</strong>Renguti Link, Off Dagoretti Rd
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Ndeiya House. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <a href="https://wa.me/254722946628" class="wa-float" target="_blank"
+      ><svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+        /></svg
+    ></a>
+    <script src="script.js"></script>
+    <script>
+      // Pre-fill type dropdown from URL query param
+      window.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(location.search);
+        const type = params.get("type");
+        if (type) {
+          const sel = document.getElementById("type");
+          for (const opt of sel.options) {
+            if (opt.value === type) {
+              sel.value = type;
+              break;
+            }
+          }
+        }
+      });
+    </script>
+  </body>
 </html>
