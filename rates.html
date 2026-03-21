@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Rates & Pricing | Ndeiya House Nairobi</title>
+    <meta
+      name="description"
+      content="View Ndeiya House rates for accommodation, weddings, events, team building, and photoshoots near Nairobi. Transparent pricing with everything included."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .rates-tabs {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+      }
+      .rates-tab {
+        padding: 0.6rem 1.4rem;
+        border: 1.5px solid var(--cream-dark);
+        border-radius: 100px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        cursor: pointer;
+        transition: var(--transition);
+        background: var(--white);
+        color: var(--text-mid);
+      }
+      .rates-tab:hover,
+      .rates-tab.active {
+        background: var(--navy);
+        border-color: var(--navy);
+        color: var(--white);
+      }
+      .rates-panel {
+        display: none;
+      }
+      .rates-panel.active {
+        display: block;
+      }
+      .rates-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .rates-note {
+        background: var(--cream);
+        border-left: 3px solid var(--gold);
+        padding: 1.2rem 1.5rem;
+        border-radius: 0 var(--radius) var(--radius) 0;
+        margin-top: 2rem;
+        font-size: 0.88rem;
+        color: var(--text-mid);
+      }
+      .rates-note strong {
+        color: var(--navy-deeper);
+      }
+      .booking-steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+      .booking-step {
+        text-align: center;
+        padding: 2rem 1.5rem;
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--cream-dark);
+      }
+      .booking-step-num {
+        width: 48px;
+        height: 48px;
+        background: var(--navy-pale);
+        color: var(--navy);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin: 0 auto 1rem;
+      }
+      .booking-step h4 {
+        font-family: var(--font-body);
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--text);
+        margin-bottom: 0.4rem;
+      }
+      .booking-step p {
+        font-size: 0.82rem;
+        color: var(--text-light);
+      }
+      .photo-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .photo-table th {
+        background: var(--navy);
+        color: var(--white);
+        padding: 1rem 1.2rem;
+        text-align: left;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .photo-table td {
+        padding: 1rem 1.2rem;
+        border-bottom: 1px solid var(--cream-dark);
+        font-size: 0.9rem;
+        color: var(--text-mid);
+      }
+      .photo-table tr:nth-child(even) td {
+        background: var(--cream);
+      }
+      .photo-table .price-col {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        color: var(--navy);
+        font-weight: 500;
+      }
+      @media (max-width: 900px) {
+        .rates-grid {
+          grid-template-columns: 1fr;
+        }
+        .booking-steps {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .booking-steps {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---- CTA Banner ---- */
+      .cta-banner {
+        background: var(--navy);
+        padding: 5rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-banner::before {
+        content: "";
+        position: absolute;
+        inset: -50%;
+        background: radial-gradient(
+          circle at 60% 50%,
+          rgba(74, 107, 143, 0.4) 0%,
+          transparent 60%
+        );
+      }
+      .cta-banner h2 {
+        color: var(--white);
+        position: relative;
+        z-index: 1;
+        font-weight: 300;
+      }
+      .cta-banner p {
+        color: rgba(253, 252, 250, 0.8);
+        max-width: 520px;
+        margin: 1rem auto 2.5rem;
+        position: relative;
+        z-index: 1;
+      }
+      .cta-banner .flex {
+        position: relative;
+        z-index: 1;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo"
+          ><img src="logo.png" alt="Ndeiya House"
+        /></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="rates.html" class="active">Rates</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+          <li><a href="contact.html" class="btn btn-outline">Book Now</a></li>
+        </ul>
+        <button class="nav-toggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav-mobile">
+      <a href="index.html">Home</a><a href="about.html">About</a
+      ><a href="services.html">Services</a><a href="rates.html">Rates</a
+      ><a href="gallery.html">Gallery</a><a href="faqs.html">FAQs</a
+      ><a href="contact.html" class="btn btn-primary">Book Now</a>
+    </div>
+
+    <div class="page-hero">
+      <div
+        class="page-hero-bg"
+        style="
+          background-image: url(/outdoor-2.JPG);
+        "
+      ></div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <p class="eyebrow">Transparent pricing</p>
+        <h1>Rates & Packages</h1>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="eyebrow reveal">All prices in Kenyan Shillings</p>
+          <h2 class="reveal reveal-delay-1">Choose your experience</h2>
+          <div class="divider divider--center reveal reveal-delay-2"></div>
+        </div>
+
+        <div class="rates-tabs reveal">
+          <button
+            class="rates-tab active"
+            onclick="showPanel('accommodation', this)"
+          >
+            🏡 Accommodation
+          </button>
+          <button class="rates-tab" onclick="showPanel('weddings', this)">
+            💐 Weddings
+          </button>
+          <button class="rates-tab" onclick="showPanel('events', this)">
+            🎉 Events & Parties
+          </button>
+          <button class="rates-tab" onclick="showPanel('team', this)">
+            🌿 Team Building
+          </button>
+          <button class="rates-tab" onclick="showPanel('photoshoots', this)">
+            📸 Photoshoots
+          </button>
+        </div>
+
+        <!-- ACCOMMODATION -->
+        <div class="rates-panel active" id="panel-accommodation">
+          <div class="rates-grid">
+            <div class="price-card reveal">
+              <p class="eyebrow">Standard rate</p>
+              <div class="price-amount">Ksh 47,000</div>
+              <div class="price-unit">per night</div>
+              <ul class="price-includes">
+                <li>All 6 en-suite rooms</li>
+                <li>Maximum 14 guests</li>
+                <li>Private chef (you bring ingredients)</li>
+                <li>WiFi & backup generator</li>
+                <li>Swimming pool & steam room</li>
+                <li>Lush gardens & waterfalls</li>
+                <li>Check-in 12pm · Check-out 10am</li>
+                <li>Grill services on request</li>
+              </ul>
+              <div class="mt-4">
+                <a
+                  href="contact.html?type=Accommodation"
+                  class="btn btn-primary"
+                  style="width: 100%; justify-content: center"
+                  >Enquire Now</a
+                >
+              </div>
+            </div>
+            <div class="price-card featured reveal reveal-delay-1">
+              <p class="eyebrow" style="color: var(--gold)">
+                December — High Season
+              </p>
+              <div class="price-amount">Ksh 57,000</div>
+              <div class="price-unit">per night</div>
+              <ul class="price-includes">
+                <li>Everything in the standard rate</li>
+                <li>Peak season availability</li>
+                <li>Book early — December fills fast</li>
+              </ul>
+              <div class="mt-4">
+                <a
+                  href="contact.html?type=Accommodation+December"
+                  class="btn btn-gold"
+                  style="width: 100%; justify-content: center"
+                  >Book December Now</a
+                >
+              </div>
+            </div>
+            <div
+              class="price-card reveal reveal-delay-2"
+              style="background: var(--cream); border-color: var(--cream-dark)"
+            >
+              <p class="eyebrow">Good to know</p>
+              <h3 style="font-size: 1.1rem; margin: 0.75rem 0">
+                Room breakdown
+              </h3>
+              <ul class="price-includes">
+                <li>3 rooms with double beds</li>
+                <li>2 rooms with twin single beds</li>
+                <li>1 room with double + 2 singles</li>
+                <li>All rooms en-suite with bathroom</li>
+                <li>Late check-out on request</li>
+                <li>No extra guests beyond 14</li>
+              </ul>
+              <div class="mt-3 rates-note" style="margin-top: 1rem">
+                <strong>Bring your own alcohol</strong> — guests are welcome to
+                bring drinks and are expected to drink responsibly.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WEDDINGS -->
+        <div class="rates-panel" id="panel-weddings">
+          <div class="rates-grid">
+            <div class="price-card featured reveal">
+              <p class="eyebrow">Full day</p>
+              <div class="price-amount">Ksh 90,000</div>
+              <div class="price-unit">wedding venue rate</div>
+              <ul class="price-includes">
+                <li>All garden spaces — up to 150 guests</li>
+                <li>Rehearsal day for bridal team</li>
+                <li>1 free setup day + 1 free set-down day</li>
+                <li>Power & water access</li>
+                <li>2 day guards provided</li>
+                <li>Parking for up to 50 vehicles</li>
+                <li>Man-made waterfalls backdrop</li>
+                <li>Swimming pool available</li>
+                <li>Complimentary engagement shoot</li>
+              </ul>
+              <div class="mt-4">
+                <a
+                  href="contact.html?type=Wedding"
+                  class="btn btn-primary"
+                  style="width: 100%; justify-content: center"
+                  >Enquire Now</a
+                >
+              </div>
+            </div>
+            <div class="price-card reveal reveal-delay-1">
+              <p class="eyebrow">Evening add-on</p>
+              <div class="price-amount">Ksh 30,000</div>
+              <div class="price-unit">6pm – 1am</div>
+              <ul class="price-includes">
+                <li>Evening party extension</li>
+                <li>All grounds remain available</li>
+                <li>Ideal for after-party or dinner reception</li>
+              </ul>
+              <div class="mt-4">
+                <a
+                  href="contact.html?type=Wedding+Evening"
+                  class="btn btn-outline-dark"
+                  style="width: 100%; justify-content: center"
+                  >Add to wedding package</a
+                >
+              </div>
+            </div>
+            <div
+              class="price-card reveal reveal-delay-2"
+              style="background: var(--cream)"
+            >
+              <p class="eyebrow">Please note</p>
+              <ul class="price-includes" style="margin-top: 1rem">
+                <li>
+                  Tents, chairs & decor not supplied — trusted vendor referrals
+                  available
+                </li>
+                <li>Clients must bring portable washrooms & a minder</li>
+                <li>
+                  In-house chef for up to 25 pax — bring your own catering for
+                  larger groups
+                </li>
+                <li>
+                  Event coordination not in-house — we can connect you with
+                  planners
+                </li>
+                <li>Goat grilling: Ksh 3,000 per goat (slaughter + grill)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- EVENTS -->
+        <div class="rates-panel" id="panel-events">
+          <div class="rates-grid">
+            <div class="price-card reveal">
+              <p class="eyebrow">Smaller gathering</p>
+              <div class="price-amount">Ksh 30,000</div>
+              <div class="price-unit">25 – 50 guests</div>
+              <ul class="price-includes">
+                <li>Full use of all grounds</li>
+                <li>Swimming pool & pool house</li>
+                <li>Backup generator</li>
+                <li>Check-in 12pm · Check-out 9pm</li>
+              </ul>
+              <div class="mt-4">
+                <a
+                  href="contact.html?type=Event+Small"
+                  class="btn btn-primary"
+                  style="width: 100%; justify-content: center"
+                  >Book Now</a
+                >
+              </div>
+            </div>
+            <div class="price-card featured reveal reveal-delay-1">
+              <p class="eyebrow">Larger gathering</p>
+              <div class="price-amount">Ksh 50,000</div>
+              <div class="price-unit">60 – 100 guests</div>
+              <ul class="price-includes">
+                <li>Full use of all grounds</li>
+                <li>Swimming pool & pool house</li>
+                <li>Backup generator</li>
+                <li>Check-in 12pm · Check-out 9pm</li>
+              </ul>
+              <div class="mt-4">
+                <a
+                  href="contact.html?type=Event+Large"
+                  class="btn btn-primary"
+                  style="width: 100%; justify-content: center"
+                  >Book Now</a
+                >
+              </div>
+            </div>
+            <div
+              class="price-card reveal reveal-delay-2"
+              style="background: var(--cream)"
+            >
+              <p class="eyebrow">Good for</p>
+              <ul class="price-includes" style="margin-top: 1rem">
+                <li>Birthday parties</li>
+                <li>Graduation celebrations</li>
+                <li>Private family gatherings</li>
+                <li>Baby showers & bridal showers</li>
+                <li>End-of-year company parties</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEAM BUILDING -->
+        <div class="rates-panel" id="panel-team">
+          <div style="max-width: 700px; margin: 0 auto">
+            <div
+              class="price-card featured reveal"
+              style="text-align: center; padding: 3rem"
+            >
+              <p class="eyebrow">Day package</p>
+              <div class="price-amount" style="font-size: 3.5rem">
+                Ksh 3,500
+              </div>
+              <div class="price-unit">per person · up to 25 people</div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 1.5rem;
+                  margin-top: 2rem;
+                  text-align: left;
+                "
+              >
+                <div>
+                  <h4
+                    style="
+                      font-family: var(--font-body);
+                      font-size: 0.78rem;
+                      font-weight: 500;
+                      letter-spacing: 0.1em;
+                      text-transform: uppercase;
+                      color: var(--navy);
+                      margin-bottom: 0.75rem;
+                    "
+                  >
+                    Included
+                  </h4>
+                  <ul class="price-includes">
+                    <li>Grounds & gardens</li>
+                    <li>Swimming pool</li>
+                    <li>Washroom facilities</li>
+                    <li>12pm – 9pm access</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4
+                    style="
+                      font-family: var(--font-body);
+                      font-size: 0.78rem;
+                      font-weight: 500;
+                      letter-spacing: 0.1em;
+                      text-transform: uppercase;
+                      color: var(--navy);
+                      margin-bottom: 0.75rem;
+                    "
+                  >
+                    Catering included
+                  </h4>
+                  <ul class="price-includes">
+                    <li>10am tea & snacks</li>
+                    <li>Lunch + soft drink/water</li>
+                    <li>4pm tea & snacks</li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="rates-note"
+                style="text-align: left; margin-top: 1.5rem"
+              >
+                <strong>Note:</strong> Package is exclusive of the house
+                (grounds only). The house is a separate accommodation booking.
+              </div>
+              <div class="mt-4">
+                <a
+                  href="contact.html?type=Team+Building"
+                  class="btn btn-primary"
+                  style="padding: 1rem 3rem"
+                  >Book a Team Day</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHOTOSHOOTS -->
+        <div class="rates-panel" id="panel-photoshoots">
+          <div style="max-width: 800px; margin: 0 auto">
+            <table class="photo-table reveal">
+              <thead>
+                <tr>
+                  <th>Session type</th>
+                  <th class="price-col" style="color: var(--white)">
+                    Rate (Ksh)
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Individual / Single photoshoot</td>
+                  <td class="price-col">5,000</td>
+                </tr>
+                <tr>
+                  <td>Couples</td>
+                  <td class="price-col">8,000</td>
+                </tr>
+                <tr>
+                  <td>Baby bump shoot</td>
+                  <td class="price-col">10,000</td>
+                </tr>
+                <tr>
+                  <td>Family shoot</td>
+                  <td class="price-col">15,000</td>
+                </tr>
+                <tr>
+                  <td>Wedding shoot — 1 to 10 people</td>
+                  <td class="price-col">12,000</td>
+                </tr>
+                <tr>
+                  <td>Wedding shoot — 11 to 20 people</td>
+                  <td class="price-col">18,000</td>
+                </tr>
+                <tr>
+                  <td>Wedding shoot — 21 to 30 people</td>
+                  <td class="price-col">25,000</td>
+                </tr>
+                <tr>
+                  <td>Proposal / Engagement shoot</td>
+                  <td class="price-col">12,000</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="rates-note reveal reveal-delay-1">
+              <strong>Note:</strong> These rates are for venue use only —
+              photographer fees are not included. Weddings that book the full
+              venue package receive a complimentary engagement shoot.
+            </div>
+            <div class="mt-4 text-center">
+              <a
+                href="contact.html?type=Photoshoot"
+                class="btn btn-primary reveal reveal-delay-2"
+                >Book a Shoot</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOKING STEPS -->
+        <div style="margin-top: 5rem">
+          <div class="text-center mb-4">
+            <p class="eyebrow reveal">How to book</p>
+            <h2 class="reveal reveal-delay-1">Simple, straightforward</h2>
+          </div>
+          <div class="booking-steps">
+            <div class="booking-step reveal">
+              <div class="booking-step-num">1</div>
+              <h4>Send an enquiry</h4>
+              <p>
+                Email or fill in our contact form with your date and
+                requirements
+              </p>
+            </div>
+            <div class="booking-step reveal reveal-delay-1">
+              <div class="booking-step-num">2</div>
+              <h4>50% deposit</h4>
+              <p>
+                Pay your deposit via M-Pesa or bank transfer to secure your date
+              </p>
+            </div>
+            <div class="booking-step reveal reveal-delay-2">
+              <div class="booking-step-num">3</div>
+              <h4>Balance payment</h4>
+              <p>Pay the remaining balance one day before your event</p>
+            </div>
+            <div class="booking-step reveal reveal-delay-3">
+              <div class="booking-step-num">4</div>
+              <h4>Arrive & enjoy</h4>
+              <p>We take care of the rest — check in from 12pm on your day</p>
+            </div>
+          </div>
+          <div class="rates-note reveal" style="margin-top: 2rem">
+            <strong>Payment options:</strong> We accept M-Pesa and bank
+            transfers. Bookings are confirmed only upon receipt of deposit.
+            Contact us at ndeiyahselimited@yahoo.com or call +254 712 630 306.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Ready to reserve your date?</h2>
+        <p>
+          Get in touch and we'll confirm availability and walk you through the
+          details.
+        </p>
+        <div
+          class="flex"
+          style="
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+          "
+        >
+          <a href="contact.html" class="btn btn-gold">Make an Enquiry</a>
+          <a
+            href="https://wa.me/254712630306"
+            target="_blank"
+            class="btn btn-outline"
+            >Chat on WhatsApp</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-logo">
+              <img src="logo.png" alt="Ndeiya House" />
+            </div>
+            <p class="footer-tagline">
+              "Some moments are meant to be celebrated in a place that feels
+              like home."
+            </p>
+            <div class="social-links">
+              <a href="https://instagram.com/ndeiyahouse" target="_blank">ig</a
+              ><a href="https://facebook.com/ndeiyahouse" target="_blank">fb</a>
+            </div>
+          </div>
+          <div>
+            <h5>Explore</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="rates.html">Rates</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Services</h5>
+            <ul class="footer-links">
+              <li><a href="services.html#accommodation">Accommodation</a></li>
+              <li><a href="services.html#weddings">Weddings</a></li>
+              <li><a href="services.html#events">Events & Parties</a></li>
+              <li><a href="services.html#team">Team Building</a></li>
+              <li><a href="services.html#photoshoots">Photoshoots</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Get in touch</h5>
+            <div class="footer-contact">
+              <div class="footer-contact-item">
+                <strong>Phone</strong>+254 712 630 306
+              </div>
+              <div class="footer-contact-item">
+                <strong>Email</strong>ndeiyahselimited@yahoo.com
+              </div>
+              <div class="footer-contact-item">
+                <strong>Location</strong>Renguti Link, Off Dagoretti Rd
+              </div>
+            </div>
+            <div class="mt-3">
+              <a
+                href="contact.html"
+                class="btn btn-primary"
+                style="width: 100%; justify-content: center"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Ndeiya House. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <a href="https://wa.me/254712630306" class="wa-float" target="_blank"
+      ><svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+        /></svg
+    ></a>
+    <script src="script.js"></script>
+    <script>
+      function showPanel(id, btn) {
+        document
+          .querySelectorAll(".rates-panel")
+          .forEach((p) => p.classList.remove("active"));
+        document
+          .querySelectorAll(".rates-tab")
+          .forEach((t) => t.classList.remove("active"));
+        document.getElementById("panel-" + id).classList.add("active");
+        btn.classList.add("active");
+      }
+      // Pre-select tab based on URL hash
+      window.addEventListener("DOMContentLoaded", () => {
+        const hash = location.hash.replace("#", "");
+        if (hash) {
+          const tab = document.querySelector(`.rates-tab[onclick*="${hash}"]`);
+          if (tab) {
+            tab.click();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

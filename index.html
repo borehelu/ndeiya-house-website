@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ndeiya House | Nairobi Country Retreat & Event Venue</title>
+<meta name="description" content="Escape the city at Ndeiya House — a 5-acre country retreat near Nairobi offering accommodation, weddings, events, team building, and photoshoots. Book your getaway today." />
+<link rel="stylesheet" href="style.css" />
+<style>
+/* ---- Hero ---- */
+.hero {
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('/hero-bg.JPG') center/cover no-repeat;
+  filter: brightness(0.52);
+  will-change: transform;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(44,36,22,0.65) 0%, rgba(49,79,115,0.25) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--navy-light);
+  margin-bottom: 1.2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.3s forwards;
+}
+.hero h1 {
+  color: var(--white);
+  max-width: 780px;
+  font-weight: 300;
+  line-height: 1.1;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.55s forwards;
+}
+.hero h1 em { font-style: italic; color: var(--gold-light); }
+.hero-sub {
+  margin: 1.5rem 0 2.8rem;
+  font-size: 1.1rem;
+  color: rgba(253,252,250,0.8);
+  max-width: 520px;
+  line-height: 1.7;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.75s forwards;
+}
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.95s forwards;
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  z-index: 2;
+  animation: bounce 2s ease infinite 2s;
+}
+.hero-scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ---- Highlights strip ---- */
+.highlights {
+  background: var(--navy-deeper);
+  padding: 0;
+}
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.highlight-item {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid rgba(201,185,154,0.15);
+  transition: var(--transition);
+  cursor: default;
+}
+.highlight-item:last-child { border-right: none; }
+.highlight-item:hover { background: rgba(74,107,143,0.12); }
+.highlight-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.highlight-item h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--gold-light);
+  margin-bottom: 0.4rem;
+}
+.highlight-item p {
+  font-size: 0.82rem;
+  color: var(--sand);
+  line-height: 1.6;
+}
+
+/* ---- About snippet ---- */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 600px;
+}
+.about-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.about-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 8s ease;
+}
+.about-img-wrap:hover img { transform: scale(1.05); }
+.about-img-badge {
+  position: absolute;
+  bottom: 2.5rem;
+  right: -1.5rem;
+  background: var(--navy);
+  color: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(49,79,115,0.35);
+  min-width: 140px;
+}
+.about-img-badge .num {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 1;
+  display: block;
+}
+.about-img-badge .label { font-size: 0.75rem; letter-spacing: 0.08em; opacity: 0.85; }
+.about-text {
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--cream);
+}
+.about-text blockquote {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--navy-deeper);
+  line-height: 1.5;
+  border-left: 3px solid var(--gold);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+
+/* ---- Services preview ---- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.service-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 3/4;
+  cursor: pointer;
+  text-decoration: none;
+}
+.service-card-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s ease;
+}
+.service-card:hover .service-card-img { transform: scale(1.08); }
+.service-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,36,22,0.92) 0%, rgba(44,36,22,0.1) 55%);
+  transition: var(--transition);
+}
+.service-card:hover .service-card-overlay { background: linear-gradient(to top, rgba(49,79,115,0.9) 0%, rgba(44,36,22,0.15) 55%); }
+.service-card-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 2rem;
+}
+.service-card-content .pill { margin-bottom: 0.75rem; }
+.service-card-content h3 {
+  color: var(--white);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+.service-card-content p {
+  color: rgba(253,252,250,0.75);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+.service-card:hover .service-card-content p { max-height: 120px; opacity: 1; }
+.service-card-content .arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  transition: var(--transition);
+}
+.service-card:hover .service-card-content .arrow { gap: 0.7rem; }
+
+/* ---- Testimonials ---- */
+.testimonials { background: var(--cream); }
+.testimonials-slider {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: 0 2px 16px rgba(44,36,22,0.06);
+  position: relative;
+}
+.testimonial-card::before {
+  content: '\201C';
+  font-family: var(--font-display);
+  font-size: 5rem;
+  color: var(--navy-light);
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  line-height: 1;
+}
+.testimonial-card p {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--navy-deeper);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+.testimonial-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--navy-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--navy);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.testimonial-name { font-size: 0.9rem; font-weight: 500; color: var(--text); }
+.testimonial-type { font-size: 0.78rem; color: var(--text-light); }
+.stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.3rem; }
+
+/* ---- CTA Banner ---- */
+.cta-banner {
+  background: var(--navy);
+  padding: 5rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle at 60% 50%, rgba(74,107,143,0.4) 0%, transparent 60%);
+}
+.cta-banner h2 { color: var(--white); position: relative; z-index: 1; font-weight: 300; }
+.cta-banner p { color: rgba(253,252,250,0.8); max-width: 520px; margin: 1rem auto 2.5rem; position: relative; z-index: 1; }
+.cta-banner .flex { position: relative; z-index: 1; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+/* ---- Farm strip ---- */
+.farm-strip {
+  background: var(--navy-deeper);
+  padding: 4rem 0;
+}
+.farm-strip-inner {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+.farm-strip-text { flex: 1; }
+.farm-strip-text h3 { color: var(--gold-light); font-weight: 400; margin-bottom: 0.75rem; }
+.farm-strip-text p { color: var(--sand); font-size: 0.95rem; }
+.farm-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
+.farm-tag {
+  background: rgba(74,107,143,0.2);
+  color: var(--navy-light);
+  border: 1px solid rgba(74,107,143,0.3);
+  padding: 0.3rem 0.85rem;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+.farm-img { width: 420px; height: 280px; border-radius: var(--radius-lg); overflow: hidden; flex-shrink: 0; }
+.farm-img img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---- Instagram strip placeholder ---- */
+.insta-strip { background: var(--cream); padding: 4rem 0; }
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.insta-item {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--cream-dark);
+  position: relative;
+}
+.insta-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.insta-item:hover img { transform: scale(1.1); }
+.insta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(49,79,115,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+  color: var(--white);
+  font-size: 1.3rem;
+}
+.insta-item:hover .insta-overlay { opacity: 1; }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+  .highlight-item:nth-child(2) { border-right: none; }
+  .about-split { grid-template-columns: 1fr; }
+  .about-img-wrap { height: 380px; }
+  .about-text { padding: 3rem 2rem; }
+  .about-img-badge { right: 2rem; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-slider { grid-template-columns: 1fr; }
+  .insta-grid { grid-template-columns: repeat(3, 1fr); }
+  .farm-strip-inner { flex-direction: column; gap: 2rem; }
+  .farm-img { width: 100%; }
+}
+@media (max-width: 768px) {
+  .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { aspect-ratio: 4/3; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="Ndeiya House" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="rates.html">Rates</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="faqs.html">FAQs</a></li>
+      <li><a href="contact.html" class="btn btn-outline">Book Now</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="rates.html">Rates</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="faqs.html">FAQs</a>
+  <a href="contact.html" class="btn btn-primary">Book Now</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Renguti Link · Off Dagoretti Road · Nairobi</p>
+    <h1>Where gatherings bloom<br>and <em>nature</em> nourishes the soul</h1>
+    <p class="hero-sub">A 5-acre country retreat just outside Nairobi — for stays, weddings, events, and unforgettable moments.</p>
+    <div class="hero-ctas">
+      <a href="contact.html" class="btn btn-primary">Make an Enquiry</a>
+      <a href="services.html" class="btn btn-outline">Explore Services</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS STRIP -->
+<section class="highlights">
+  <div class="highlights-grid container" style="max-width:100%;padding:0;">
+    <div class="highlight-item reveal">
+      <div class="highlight-icon">🏡</div>
+      <h4>Accommodation</h4>
+      <p>6 en-suite rooms · Up to 14 guests · Private chef</p>
+    </div>
+    <div class="highlight-item reveal reveal-delay-1">
+      <div class="highlight-icon">💐</div>
+      <h4>Weddings & Events</h4>
+      <p>Garden venue · Up to 150 guests · Waterfalls backdrop</p>
+    </div>
+    <div class="highlight-item reveal reveal-delay-2">
+      <div class="highlight-icon">🌿</div>
+      <h4>Team Building</h4>
+      <p>Day packages · Catering included · Pool access</p>
+    </div>
+    <div class="highlight-item reveal reveal-delay-3">
+      <div class="highlight-icon">📸</div>
+      <h4>Photoshoots</h4>
+      <p>Manicured lawns · Waterfalls · Natural light</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SNIPPET -->
+<section style="padding:0;">
+  <div class="about-split">
+    <div class="about-img-wrap">
+      <img src="/gallery-13.JPG" alt="Ndeiya House exterior" loading="lazy" />
+      <div class="about-img-badge">
+        <span class="num">5</span>
+        <span class="label">Acres of peace</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="eyebrow reveal">Our story</p>
+      <h2 class="reveal reveal-delay-1">A place that<br>feels like home</h2>
+      <blockquote class="reveal reveal-delay-2">"Some moments are meant to be celebrated in a place that feels like home."</blockquote>
+      <p class="reveal reveal-delay-2">Set on five peaceful acres off Dagoretti Road, Ndeiya House blends simplicity with warmth. From our farm-to-table kitchen garden to our night-lit swimming pool, every detail is designed to help you reconnect, celebrate, and rest.</p>
+      <div class="mt-4 reveal reveal-delay-3">
+        <a href="about.html" class="btn btn-outline-dark">Our story →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="eyebrow reveal">What we offer</p>
+      <h2 class="reveal reveal-delay-1">Made for every occasion</h2>
+      <div class="divider divider--center reveal reveal-delay-2"></div>
+    </div>
+    <div class="services-grid">
+      <a href="services.html#accommodation" class="service-card reveal">
+        <div class="service-card-img" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=80')"></div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <span class="pill">Stays</span>
+          <h3>Accommodation</h3>
+          <p>Six en-suite rooms sleeping up to 14 guests, with a private chef, pool, and lush gardens.</p>
+          <span class="arrow">Explore ›</span>
+        </div>
+      </a>
+      <a href="services.html#weddings" class="service-card reveal reveal-delay-1">
+        <div class="service-card-img" style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?w=700&q=80')"></div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <span class="pill">Weddings</span>
+          <h3>Weddings & Events</h3>
+          <p>Garden ceremony and reception venue for up to 150 guests. Man-made waterfalls included.</p>
+          <span class="arrow">Explore ›</span>
+        </div>
+      </a>
+      <a href="services.html#team" class="service-card reveal reveal-delay-2">
+        <div class="service-card-img" style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&q=80')"></div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <span class="pill">Corporate</span>
+          <h3>Team Building</h3>
+          <p>Day packages with full catering, pool access, and distraction-free open grounds.</p>
+          <span class="arrow">Explore ›</span>
+        </div>
+      </a>
+    </div>
+    <div class="text-center mt-4">
+      <a href="services.html" class="btn btn-outline-dark reveal">View all services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FARM STRIP -->
+<div class="farm-strip">
+  <div class="container">
+    <div class="farm-strip-inner">
+      <div class="farm-img">
+        <img src="/farm.JPG" alt="Ndeiya Farm" loading="lazy" />
+      </div>
+      <div class="farm-strip-text reveal">
+        <p class="eyebrow" style="color:var(--navy-light)">On-site</p>
+        <h3>Ndeiya Farm — from our soil to your table</h3>
+        <p>Our working farm supplies fresh produce directly to your meals. We grow what we serve — and we serve with pride.</p>
+        <div class="farm-tags">
+          <span class="farm-tag">Lettuce</span><span class="farm-tag">Broccoli</span><span class="farm-tag">Celery</span>
+          <span class="farm-tag">Kale</span><span class="farm-tag">Spinach</span><span class="farm-tag">Eggs &amp; Milk</span>
+        </div>
+        <div class="mt-3"><a href="about.html#farm" class="btn btn-outline" style="color:var(--gold-light);border-color:var(--gold);">About the farm →</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="eyebrow reveal">Guest stories</p>
+      <h2 class="reveal reveal-delay-1">What our guests say</h2>
+      <div class="divider divider--center reveal reveal-delay-2"></div>
+    </div>
+    <div class="testimonials-slider">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"We hosted our wedding at Ndeiya House and it was absolutely magical. The waterfalls, the gardens, the staff — everything was perfect. Our guests are still talking about it."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <div class="testimonial-name">Amina K.</div>
+            <div class="testimonial-type">Wedding ceremony · 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="stars">★★★★★</div>
+        <p>"Our team building day was incredible. The grounds gave everyone space to breathe, the food was fresh and generous, and the pool was the perfect treat at the end."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">J</div>
+          <div>
+            <div class="testimonial-name">James M.</div>
+            <div class="testimonial-type">Corporate team building · 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="stars">★★★★★</div>
+        <p>"We came for a family weekend and left feeling genuinely restored. The rooms are beautiful, the chef was wonderful, and the gardens feel like a different world from Nairobi."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">F</div>
+          <div>
+            <div class="testimonial-name">Faith W.</div>
+            <div class="testimonial-type">Family getaway · 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to escape the city?</h2>
+    <p>Get in touch and we'll take care of every detail — from your arrival to your last meal.</p>
+    <div class="flex">
+      <a href="contact.html" class="btn btn-gold">Make an Enquiry</a>
+      <a href="rates.html" class="btn btn-outline">View Rates</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="logo.png" alt="Ndeiya House" /></div>
+        <p class="footer-tagline">"Some moments are meant to be celebrated in a place that feels like home."</p>
+        <div class="social-links">
+          <a href="https://instagram.com/ndeiyahouse" target="_blank" aria-label="Instagram">ig</a>
+          <a href="https://facebook.com/ndeiyahouse" target="_blank" aria-label="Facebook">fb</a>
+        </div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="rates.html">Rates</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul class="footer-links">
+          <li><a href="services.html#accommodation">Accommodation</a></li>
+          <li><a href="services.html#weddings">Weddings</a></li>
+          <li><a href="services.html#events">Events & Parties</a></li>
+          <li><a href="services.html#team">Team Building</a></li>
+          <li><a href="services.html#photoshoots">Photoshoots</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <div class="footer-contact">
+          <div class="footer-contact-item"><strong>Phone</strong> +254 712 630 306</div>
+          <div class="footer-contact-item"><strong>Phone</strong> +254 722 946 628</div>
+          <div class="footer-contact-item"><strong>Email</strong> ndeiyahselimited@yahoo.com</div>
+          <div class="footer-contact-item"><strong>Location</strong> Renguti Link, Off Dagoretti Rd, Kikuyu</div>
+        </div>
+        <div class="mt-3">
+          <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Book Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Ndeiya House. All rights reserved.</p>
+      <p>Designed with care for a special place.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/254712630306?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20Ndeiya%20House." class="wa-float" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>

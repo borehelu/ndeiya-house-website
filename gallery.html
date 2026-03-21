@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Photo Gallery | Ndeiya House Nairobi</title>
+    <meta
+      name="description"
+      content="Browse photos of Ndeiya House — our 5-acre country retreat near Nairobi, featuring lush gardens, swimming pool, en-suite rooms, wedding setups, and more."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .gallery-filters {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 2.5rem;
+      }
+      .gallery-filter {
+        padding: 0.55rem 1.2rem;
+        border: 1.5px solid var(--cream-dark);
+        border-radius: 100px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+        background: var(--white);
+        color: var(--text-mid);
+      }
+      .gallery-filter:hover,
+      .gallery-filter.active {
+        background: var(--navy);
+        border-color: var(--navy);
+        color: var(--white);
+      }
+      .gallery-masonry {
+        columns: 3;
+        gap: 1rem;
+      }
+      .gallery-item {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        cursor: zoom-in;
+        display: block;
+      }
+      .gallery-item img {
+        width: 100%;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.04);
+      }
+      @media (max-width: 900px) {
+        .gallery-masonry {
+          columns: 2;
+        }
+      }
+      @media (max-width: 560px) {
+        .gallery-masonry {
+          columns: 1;
+        }
+      }
+      /* ---- CTA Banner ---- */
+      .cta-banner {
+        background: var(--navy);
+        padding: 5rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-banner::before {
+        content: "";
+        position: absolute;
+        inset: -50%;
+        background: radial-gradient(
+          circle at 60% 50%,
+          rgba(74, 107, 143, 0.4) 0%,
+          transparent 60%
+        );
+      }
+      .cta-banner h2 {
+        color: var(--white);
+        position: relative;
+        z-index: 1;
+        font-weight: 300;
+      }
+      .cta-banner p {
+        color: rgba(253, 252, 250, 0.8);
+        max-width: 520px;
+        margin: 1rem auto 2.5rem;
+        position: relative;
+        z-index: 1;
+      }
+      .cta-banner .flex {
+        position: relative;
+        z-index: 1;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo"
+          ><img src="logo.png" alt="Ndeiya House"
+        /></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="rates.html">Rates</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+          <li><a href="contact.html" class="btn btn-outline">Book Now</a></li>
+        </ul>
+        <button class="nav-toggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav-mobile">
+      <a href="index.html">Home</a><a href="about.html">About</a
+      ><a href="services.html">Services</a><a href="rates.html">Rates</a
+      ><a href="gallery.html">Gallery</a><a href="faqs.html">FAQs</a
+      ><a href="contact.html" class="btn btn-primary">Book Now</a>
+    </div>
+
+    <div class="page-hero">
+      <div
+        class="page-hero-bg"
+        style="
+          background-image: url(/outdoor-2.JPG);
+        "
+      ></div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <p class="eyebrow">Visual journey</p>
+        <h1>Gallery</h1>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="gallery-filters reveal">
+          <button
+            class="gallery-filter active"
+            onclick="filterGallery('all', this)"
+          >
+            All
+          </button>
+          <button
+            class="gallery-filter"
+            onclick="filterGallery('property', this)"
+          >
+            Property & Grounds
+          </button>
+          <button class="gallery-filter" onclick="filterGallery('rooms', this)">
+            Rooms & Interiors
+          </button>
+          <button
+            class="gallery-filter"
+            onclick="filterGallery('weddings', this)"
+          >
+            Weddings & Events
+          </button>
+          <button class="gallery-filter" onclick="filterGallery('pool', this)">
+            Pool & Gardens
+          </button>
+          <button class="gallery-filter" onclick="filterGallery('farm', this)">
+            Farm
+          </button>
+        </div>
+        <div class="gallery-masonry" id="gallery-grid">
+          <div class="gallery-item gallery-img reveal" data-cat="property">
+            <img
+              src="/grounds-1.JPG"
+              alt="Ndeiya House exterior"
+              loading="lazy"
+            />
+          </div>
+          <div
+            class="gallery-item gallery-img reveal reveal-delay-1"
+            data-cat="pool"
+          >
+            <img
+              src="/pool-1.JPG"
+              alt="Swimming pool"
+              loading="lazy"
+            />
+          </div>
+          <div
+            class="gallery-item gallery-img reveal reveal-delay-2"
+            data-cat="weddings"
+          >
+            <img
+              src="/grounds-2.JPG"
+              alt="Wedding setup"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item gallery-img reveal" data-cat="rooms">
+            <img
+              src="/interior-1.JPG"
+              alt="Bedroom"
+              loading="lazy"
+            />
+          </div>
+          <div
+            class="gallery-item gallery-img reveal reveal-delay-1"
+            data-cat="farm"
+          >
+            <img
+              src="/farm-1.JPG"
+              alt="Ndeiya Farm"
+              loading="lazy"
+            />
+          </div>
+          <div
+            class="gallery-item gallery-img reveal reveal-delay-2"
+            data-cat="property"
+          >
+            <img
+              src="/grounds-3.JPG"
+              alt="Gardens"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item gallery-img reveal" data-cat="pool">
+            <img
+              src="/pool-2.JPG"
+              alt="Pool area"
+              loading="lazy"
+            />
+          </div>
+          <div
+            class="gallery-item gallery-img reveal reveal-delay-1"
+            data-cat="weddings"
+          >
+            <img
+              src="/grounds-5.JPG"
+              alt="Ceremony"
+              loading="lazy"
+            />
+          </div>
+          <div
+            class="gallery-item gallery-img reveal reveal-delay-2"
+            data-cat="rooms"
+          >
+            <img
+              src="/interior-2.JPG"
+              alt="Interior"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item gallery-img reveal" data-cat="property">
+            <img
+              src="/grounds-4.JPG"
+              alt="Grounds"
+              loading="lazy"
+            />
+          </div>
+          <div
+            class="gallery-item gallery-img reveal reveal-delay-1"
+            data-cat="farm"
+          >
+            <img
+              src="/farm-2.JPG"
+              alt="Farm produce"
+              loading="lazy"
+            />
+          </div>
+          <div
+            class="gallery-item gallery-img reveal reveal-delay-2"
+            data-cat="weddings"
+          >
+            <img
+              src="/grounds-6.JPG"
+              alt="Event setup"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Like what you see?</h2>
+        <p>Get in touch to check availability for your date.</p>
+        <div
+          class="flex"
+          style="
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+          "
+        >
+          <a href="contact.html" class="btn btn-gold">Make an Enquiry</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-logo">
+              <img src="logo.png" alt="Ndeiya House" />
+            </div>
+            <p class="footer-tagline">
+              "Some moments are meant to be celebrated in a place that feels
+              like home."
+            </p>
+            <div class="social-links">
+              <a href="https://instagram.com/ndeiyahouse" target="_blank">ig</a
+              ><a href="https://facebook.com/ndeiyahouse" target="_blank">fb</a>
+            </div>
+          </div>
+          <div>
+            <h5>Explore</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="rates.html">Rates</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Services</h5>
+            <ul class="footer-links">
+              <li><a href="services.html#accommodation">Accommodation</a></li>
+              <li><a href="services.html#weddings">Weddings</a></li>
+              <li><a href="services.html#events">Events</a></li>
+              <li><a href="services.html#team">Team Building</a></li>
+              <li><a href="services.html#photoshoots">Photoshoots</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Get in touch</h5>
+            <div class="footer-contact">
+              <div class="footer-contact-item">
+                <strong>Phone</strong>+254 712 630 306
+              </div>
+              <div class="footer-contact-item">
+                <strong>Email</strong>ndeiyahselimited@yahoo.com
+              </div>
+              <div class="footer-contact-item">
+                <strong>Location</strong>Renguti Link, Off Dagoretti Rd
+              </div>
+            </div>
+            <div class="mt-3">
+              <a
+                href="contact.html"
+                class="btn btn-primary"
+                style="width: 100%; justify-content: center"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Ndeiya House. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <a href="https://wa.me/254712630306" class="wa-float" target="_blank"
+      ><svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+        /></svg
+    ></a>
+    <script src="script.js"></script>
+    <script>
+      function filterGallery(cat, btn) {
+        document
+          .querySelectorAll(".gallery-filter")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        document.querySelectorAll(".gallery-item").forEach((item) => {
+          item.style.display =
+            cat === "all" || item.dataset.cat === cat ? "block" : "none";
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Frequently Asked Questions | Ndeiya House</title>
+    <meta
+      name="description"
+      content="Got questions about Ndeiya House? Find answers about accommodation, catering, parking, photoshoots, weddings, alcohol policy, and how to book."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .faq-layout {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 5rem;
+        align-items: start;
+      }
+      .faq-sidebar {
+        position: sticky;
+        top: 6rem;
+      }
+      .faq-category-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      .faq-cat-btn {
+        text-align: left;
+        padding: 0.75rem 1rem;
+        border-radius: var(--radius);
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text-mid);
+        transition: var(--transition);
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
+      .faq-cat-btn:hover,
+      .faq-cat-btn.active {
+        background: var(--navy-pale);
+        color: var(--navy);
+        padding-left: 1.3rem;
+      }
+      .faq-section-title {
+        font-family: var(--font-display);
+        font-size: 1.6rem;
+        color: var(--navy);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid var(--navy-pale);
+      }
+      .faq-group {
+        margin-bottom: 3rem;
+      }
+      @media (max-width: 900px) {
+        .faq-layout {
+          grid-template-columns: 1fr;
+        }
+        .faq-sidebar {
+          position: static;
+        }
+        .faq-category-nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+      }
+      /* ---- CTA Banner ---- */
+      .cta-banner {
+        background: var(--navy);
+        padding: 5rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-banner::before {
+        content: "";
+        position: absolute;
+        inset: -50%;
+        background: radial-gradient(
+          circle at 60% 50%,
+          rgba(74, 107, 143, 0.4) 0%,
+          transparent 60%
+        );
+      }
+      .cta-banner h2 {
+        color: var(--white);
+        position: relative;
+        z-index: 1;
+        font-weight: 300;
+      }
+      .cta-banner p {
+        color: rgba(253, 252, 250, 0.8);
+        max-width: 520px;
+        margin: 1rem auto 2.5rem;
+        position: relative;
+        z-index: 1;
+      }
+      .cta-banner .flex {
+        position: relative;
+        z-index: 1;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo"
+          ><img src="logo.png" alt="Ndeiya House"
+        /></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="rates.html">Rates</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="faqs.html" class="active">FAQs</a></li>
+          <li><a href="contact.html" class="btn btn-outline">Book Now</a></li>
+        </ul>
+        <button class="nav-toggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav-mobile">
+      <a href="index.html">Home</a><a href="about.html">About</a
+      ><a href="services.html">Services</a><a href="rates.html">Rates</a
+      ><a href="gallery.html">Gallery</a><a href="faqs.html">FAQs</a
+      ><a href="contact.html" class="btn btn-primary">Book Now</a>
+    </div>
+
+    <div class="page-hero">
+      <div
+        class="page-hero-bg"
+        style="
+          background-image: url(/outdoor-2.JPG);
+        "
+      ></div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <p class="eyebrow">Got questions?</p>
+        <h1>Frequently Asked Questions</h1>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="faq-layout">
+          <!-- SIDEBAR NAV -->
+          <div class="faq-sidebar reveal">
+            <p class="eyebrow mb-3">Jump to</p>
+            <nav class="faq-category-nav">
+              <button class="faq-cat-btn active" onclick="scrollTo('general')">
+                General
+              </button>
+              <button class="faq-cat-btn" onclick="scrollTo('accommodation')">
+                Accommodation
+              </button>
+              <button class="faq-cat-btn" onclick="scrollTo('catering')">
+                Catering & Food
+              </button>
+              <button class="faq-cat-btn" onclick="scrollTo('events')">
+                Events & Weddings
+              </button>
+              <button class="faq-cat-btn" onclick="scrollTo('facilities')">
+                Facilities
+              </button>
+              <button class="faq-cat-btn" onclick="scrollTo('booking')">
+                Booking & Payment
+              </button>
+            </nav>
+            <div
+              style="
+                margin-top: 2.5rem;
+                padding: 1.5rem;
+                background: var(--navy-pale);
+                border-radius: var(--radius-lg);
+              "
+            >
+              <h4
+                style="
+                  font-family: var(--font-display);
+                  font-size: 1rem;
+                  color: var(--navy);
+                  margin-bottom: 0.5rem;
+                "
+              >
+                Still have a question?
+              </h4>
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: var(--text-mid);
+                  margin-bottom: 1rem;
+                "
+              >
+                We're always happy to help.
+              </p>
+              <a
+                href="contact.html"
+                class="btn btn-primary"
+                style="width: 100%; justify-content: center; font-size: 0.78rem"
+                >Contact Us</a
+              >
+              <a
+                href="https://wa.me/254712630306"
+                target="_blank"
+                class="btn btn-outline-dark mt-2"
+                style="width: 100%; justify-content: center; font-size: 0.78rem"
+                >WhatsApp Us</a
+              >
+            </div>
+          </div>
+
+          <!-- FAQ CONTENT -->
+          <div>
+            <!-- GENERAL -->
+            <div class="faq-group reveal" id="general">
+              <div class="faq-section-title">General</div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Where is Ndeiya House located? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      We are located at Renguti Link, Off Dagoretti Road, Kikuyu
+                      — just outside Nairobi. It's a short drive from the city,
+                      set in peaceful countryside. We'll send you precise
+                      directions upon booking.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Is the venue kid-friendly? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      Absolutely. Ndeiya House is ideal for families with
+                      children. The open grounds, manicured lawns, and swimming
+                      pool make it a wonderful space for kids to enjoy and
+                      explore safely.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Is alcohol allowed on the premises?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      Yes — you are welcome to bring your own drinks. We ask
+                      that all guests drink responsibly and respect the venue
+                      and other guests at all times.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Is there parking? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      Yes. We provide secure parking for up to 50 vehicles on
+                      the property.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Is there WiFi and power backup?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      Yes on both counts. WiFi is available throughout the
+                      property, and we have a backup generator to ensure power
+                      continuity during your stay or event.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ACCOMMODATION -->
+            <div class="faq-group reveal" id="accommodation">
+              <div class="faq-section-title">Accommodation</div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  How many guests can stay overnight?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      We have six en-suite bedrooms that can accommodate a
+                      maximum of 14 guests. Three bedrooms have double beds, two
+                      have twin single beds, and one has a double bed plus two
+                      single beds. We do not allow extra guests beyond 14, as we
+                      do not have additional mattresses or beds.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  What are the check-in and check-out times?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      Check-in is from 12:00 PM and check-out is by 10:00 AM. If
+                      you need a late check-out, please let us know in advance
+                      and we will do our best to accommodate you.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  What does the accommodation rate include?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      The rate (Ksh 47,000/night standard; Ksh 57,000/night in
+                      December) includes exclusive use of all 6 bedrooms, access
+                      to the swimming pool and steam room, the lush gardens and
+                      man-made waterfalls, WiFi, a private chef (you provide the
+                      ingredients), and backup generator. Grill services are
+                      available on request.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CATERING -->
+            <div class="faq-group reveal" id="catering">
+              <div class="faq-section-title">Catering & Food</div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Do you have an in-house chef? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      Yes. Our in-house chef can prepare meals for up to 25
+                      people. You bring the ingredients and the chef cooks
+                      according to a menu agreed with you in advance. For groups
+                      larger than 25, clients are expected to arrange their own
+                      catering.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Do you offer goat grilling? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      Yes! We offer goat slaughter and grilling services for Ksh
+                      3,000 per goat. This must be arranged in advance — please
+                      mention it when you make your enquiry.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  What does the team building catering include?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      The team building day package (Ksh 3,500 per person)
+                      includes 10am tea and snacks, lunch with a soft drink or
+                      water, and 4pm tea and snacks.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Do you have a farm on site? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      Yes — Ndeiya Farm is our on-site working farm. We grow a
+                      range of fresh produce including lettuce, broccoli,
+                      cauliflower, celery, kale, spinach, and leeks, as well as
+                      dairy and eggs. Where possible, our in-house chef uses
+                      fresh farm produce in meals. The farm is also available
+                      for educational tours.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- EVENTS -->
+            <div class="faq-group reveal" id="events">
+              <div class="faq-section-title">Events & Weddings</div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Do you provide tents, chairs, tables, or décor?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      We don't supply these directly, but we have trusted
+                      vendors we can recommend upon request. Just mention it
+                      when you enquire and we'll connect you.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Do you offer event coordination?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      We don't offer in-house event coordination, but we can
+                      connect you with experienced event planners we work with
+                      regularly.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  What is included in the wedding venue rate?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      The Ksh 90,000 wedding rate includes: use of all garden
+                      spaces (max 150 guests), a rehearsal day for the bridal
+                      team, one free setup day and one free set-down day, access
+                      to power and water, two day guards, parking for up to 50
+                      vehicles, the man-made waterfall backdrop, access to the
+                      swimming pool, and a complimentary engagement shoot.
+                      Clients need to bring portable washrooms and a washroom
+                      minder.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Can we add an evening party to the wedding package?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      Yes. An evening add-on is available for Ksh 30,000,
+                      running from 6pm to 1am. This is ideal for an after-party
+                      or dinner reception.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- FACILITIES -->
+            <div class="faq-group reveal" id="facilities">
+              <div class="faq-section-title">Facilities</div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Is the swimming pool available for all bookings?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      Yes. The swimming pool (with night lighting) is included
+                      in the accommodation rate, and is available for event and
+                      party bookings too. It is also available during weddings.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Do you have a steam room? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      Yes — we have a beautiful steam room with a spacious
+                      seating area and cozy shower cubicle. It is available on
+                      request and is separately chargeable. Please mention it
+                      when booking.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  What are the man-made waterfalls?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      Our property features beautiful man-made waterfalls set
+                      within the gardens, creating a stunning natural backdrop
+                      perfect for photos, ceremonies, and simply relaxing.
+                      They're one of the most beloved features of Ndeiya House.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOOKING -->
+            <div class="faq-group reveal" id="booking">
+              <div class="faq-section-title">Booking & Payment</div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  How do I make a booking? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      Send us an enquiry via email at
+                      ndeiyahselimited@yahoo.com, use the contact form on this
+                      website, or call/WhatsApp us on +254 712 630 306. We'll
+                      confirm availability and send you payment details.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  What deposit is required? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      A 50% deposit is required to secure your date. The
+                      remaining balance is due one day before your event or
+                      arrival. Bookings are confirmed only upon receipt of the
+                      deposit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  What payment methods do you accept?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>We accept M-Pesa and bank transfers.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Can I request a late check-out?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <p>
+                      Yes — late check-out can be arranged on request, subject
+                      to availability. Please mention this when making your
+                      booking.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Still have a question?</h2>
+        <p>
+          We're always happy to help — drop us a message and we'll get back to
+          you promptly.
+        </p>
+        <div
+          class="flex"
+          style="
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+          "
+        >
+          <a href="contact.html" class="btn btn-gold">Get in Touch</a>
+          <a
+            href="https://wa.me/254712630306"
+            target="_blank"
+            class="btn btn-outline"
+            >Chat on WhatsApp</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-logo">
+              <img src="logo.png" alt="Ndeiya House" />
+            </div>
+            <p class="footer-tagline">
+              "Some moments are meant to be celebrated in a place that feels
+              like home."
+            </p>
+            <div class="social-links">
+              <a href="https://instagram.com/ndeiyahouse" target="_blank">ig</a
+              ><a href="https://facebook.com/ndeiyahouse" target="_blank">fb</a>
+            </div>
+          </div>
+          <div>
+            <h5>Explore</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="rates.html">Rates</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Services</h5>
+            <ul class="footer-links">
+              <li><a href="services.html#accommodation">Accommodation</a></li>
+              <li><a href="services.html#weddings">Weddings</a></li>
+              <li><a href="services.html#events">Events</a></li>
+              <li><a href="services.html#team">Team Building</a></li>
+              <li><a href="services.html#photoshoots">Photoshoots</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Get in touch</h5>
+            <div class="footer-contact">
+              <div class="footer-contact-item">
+                <strong>Phone</strong>+254 712 630 306
+              </div>
+              <div class="footer-contact-item">
+                <strong>Email</strong>ndeiyahselimited@yahoo.com
+              </div>
+              <div class="footer-contact-item">
+                <strong>Location</strong>Renguti Link, Off Dagoretti Rd
+              </div>
+            </div>
+            <div class="mt-3">
+              <a
+                href="contact.html"
+                class="btn btn-primary"
+                style="width: 100%; justify-content: center"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Ndeiya House. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <a href="https://wa.me/254712630306" class="wa-float" target="_blank"
+      ><svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+        /></svg
+    ></a>
+    <script src="script.js"></script>
+    <script>
+      function scrollTo(id) {
+        document
+          .querySelectorAll(".faq-cat-btn")
+          .forEach((b) => b.classList.remove("active"));
+        event.target.classList.add("active");
+        document
+          .getElementById(id)
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    </script>
+  </body>
+</html>

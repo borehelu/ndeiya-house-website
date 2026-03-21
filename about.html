@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Ndeiya House | Our Story, Farm & Vision</title>
+    <meta
+      name="description"
+      content="Learn about Ndeiya House — a 5-acre country retreat off Dagoretti Road, Nairobi. Discover our story, eco-friendly values, and the organic Ndeiya Farm."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .mvv-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+      .mvv-card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        padding: 2.5rem 2rem;
+        text-align: center;
+        border: 1px solid var(--cream-dark);
+        transition: var(--transition);
+      }
+      .mvv-card:hover {
+        border-color: var(--navy-light);
+        box-shadow: 0 8px 32px rgba(49, 79, 115, 0.1);
+        transform: translateY(-4px);
+      }
+      .mvv-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .mvv-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+      }
+      .mvv-card p {
+        font-size: 0.92rem;
+      }
+
+      .team-strip {
+        background: var(--navy);
+        padding: 5rem 0;
+      }
+      .team-strip h2 {
+        color: var(--white);
+      }
+      .team-strip p {
+        color: rgba(253, 252, 250, 0.8);
+        max-width: 600px;
+        margin: 1rem 0 0;
+      }
+
+      .farm-feature {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+      .farm-feature-img {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        height: 440px;
+      }
+      .farm-feature-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .produce-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.6rem;
+        margin-top: 1.5rem;
+      }
+      .produce-item {
+        background: var(--navy-pale);
+        border: 1px solid var(--navy-light);
+        border-radius: var(--radius);
+        padding: 0.5rem 0.75rem;
+        font-size: 0.82rem;
+        color: var(--navy);
+        text-align: center;
+        font-weight: 500;
+      }
+
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, var(--navy-light), var(--gold));
+      }
+      .timeline-item {
+        position: relative;
+        padding: 0 0 2.5rem 2rem;
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -2.45rem;
+        top: 0.35rem;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--navy);
+        border: 3px solid var(--white);
+        box-shadow: 0 0 0 2px var(--navy-light);
+      }
+      .timeline-item h4 {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        color: var(--navy);
+        margin-bottom: 0.3rem;
+      }
+      .timeline-item p {
+        font-size: 0.88rem;
+      }
+
+      @media (max-width: 768px) {
+        .mvv-grid,
+        .farm-feature,
+        .produce-grid {
+          grid-template-columns: 1fr;
+        }
+        .farm-feature-img {
+          height: 280px;
+        }
+      }
+
+      /* ---- CTA Banner ---- */
+      .cta-banner {
+        background: var(--navy);
+        padding: 5rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-banner::before {
+        content: "";
+        position: absolute;
+        inset: -50%;
+        background: radial-gradient(
+          circle at 60% 50%,
+          rgba(74, 107, 143, 0.4) 0%,
+          transparent 60%
+        );
+      }
+      .cta-banner h2 {
+        color: var(--white);
+        position: relative;
+        z-index: 1;
+        font-weight: 300;
+      }
+      .cta-banner p {
+        color: rgba(253, 252, 250, 0.8);
+        max-width: 520px;
+        margin: 1rem auto 2.5rem;
+        position: relative;
+        z-index: 1;
+      }
+      .cta-banner .flex {
+        position: relative;
+        z-index: 1;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo"
+          ><img src="logo.png" alt="Ndeiya House"
+        /></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="rates.html">Rates</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+          <li><a href="contact.html" class="btn btn-outline">Book Now</a></li>
+        </ul>
+        <button class="nav-toggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav-mobile">
+      <a href="index.html">Home</a><a href="about.html">About</a
+      ><a href="services.html">Services</a> <a href="rates.html">Rates</a
+      ><a href="gallery.html">Gallery</a><a href="faqs.html">FAQs</a>
+      <a href="contact.html" class="btn btn-primary">Book Now</a>
+    </div>
+
+    <!-- HERO -->
+    <div class="page-hero">
+      <div
+        class="page-hero-bg"
+        style="background-image: url(&quot;/gallery-13.JPG&quot;)"
+      ></div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <p class="eyebrow">Our story</p>
+        <h1>A retreat rooted in nature & warmth</h1>
+      </div>
+    </div>
+
+    <!-- WHO WE ARE -->
+    <section class="section">
+      <div class="container">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+          "
+        >
+          <div>
+            <p class="eyebrow reveal">Who we are</p>
+            <h2 class="reveal reveal-delay-1">
+              More than a venue.<br />A feeling.
+            </h2>
+            <div class="divider reveal reveal-delay-2"></div>
+            <p class="reveal reveal-delay-2">
+              Ndeiya House is a holiday home with a characteristic touch of
+              simplicity. Set on 5 acres just outside Nairobi, our property is
+              home to a main house, private cottages, lush gardens, a swimming
+              pool, a steam room, and man-made waterfalls.
+            </p>
+            <p class="reveal reveal-delay-3" style="margin-top: 1rem">
+              All rooms are individually decorated with their own unique charm,
+              furnished to excellent standards. The backyard has a swimming
+              pool, a serene seating area, and a one-of-a-kind outdoor dining
+              experience.
+            </p>
+            <p class="reveal reveal-delay-3" style="margin-top: 1rem">
+              We are committed to eco-friendly practices — from our working farm
+              to our dedication to preserving the natural landscape that makes
+              Ndeiya House so special.
+            </p>
+          </div>
+          <div class="reveal reveal-delay-1" style="position: relative">
+            <img
+              src="/gallery-12.JPG"
+              alt="Ndeiya House gardens"
+              style="
+                border-radius: var(--radius-lg);
+                width: 100%;
+                height: 480px;
+                object-fit: cover;
+              "
+              loading="lazy"
+            />
+            <div
+              style="
+                position: absolute;
+                bottom: -1.5rem;
+                left: -1.5rem;
+                background: var(--navy);
+                color: var(--white);
+                padding: 1.5rem 2rem;
+                border-radius: var(--radius-lg);
+                box-shadow: 0 8px 32px rgba(49, 79, 115, 0.3);
+              "
+            >
+              <div
+                style="
+                  font-family: var(--font-display);
+                  font-size: 2.4rem;
+                  line-height: 1;
+                "
+              >
+                14
+              </div>
+              <div
+                style="
+                  font-size: 0.78rem;
+                  letter-spacing: 0.08em;
+                  opacity: 0.85;
+                "
+              >
+                Guests accommodated
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION VISION VALUES -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="eyebrow reveal">Our foundation</p>
+          <h2 class="reveal reveal-delay-1">Mission, vision & values</h2>
+          <div class="divider divider--center reveal reveal-delay-2"></div>
+        </div>
+        <div class="mvv-grid">
+          <div class="mvv-card reveal">
+            <div class="mvv-icon">🎯</div>
+            <h3>Our Mission</h3>
+            <div class="divider divider--center"></div>
+            <p>
+              To provide a sense of country and a serene environment truly worth
+              relaxing in — for every guest who walks through our gates.
+            </p>
+          </div>
+          <div class="mvv-card reveal reveal-delay-1">
+            <div class="mvv-icon">🌍</div>
+            <h3>Our Vision</h3>
+            <div class="divider divider--center"></div>
+            <p>
+              To be a destination model holiday home in Kenya and beyond — a
+              name synonymous with natural retreat and genuine hospitality.
+            </p>
+          </div>
+          <div class="mvv-card reveal reveal-delay-2">
+            <div class="mvv-icon">✨</div>
+            <h3>Our Goal</h3>
+            <div class="divider divider--center"></div>
+            <p>
+              To achieve cozy treatment worth lifetime memories for every single
+              guest — individual, family, couple, or corporate team.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMITMENT -->
+    <section class="team-strip">
+      <div class="container">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+          "
+        >
+          <div>
+            <p class="eyebrow reveal" style="color: var(--navy-light)">
+              Our commitment
+            </p>
+            <h2 class="reveal reveal-delay-1">
+              Warm, personal, and always here
+            </h2>
+            <p class="reveal reveal-delay-2">
+              We endeavour to provide our clients with unique leisure and
+              quality business-class services — keeping classy trends and
+              standards that meet our clients' needs and expectations. Our team
+              brings experience, youthful enthusiasm, and genuine care to every
+              stay and event.
+            </p>
+            <p
+              class="reveal reveal-delay-3"
+              style="color: rgba(253, 252, 250, 0.8); margin-top: 1rem"
+            >
+              We place strong emphasis on staff development, personal service,
+              and the kind of attention to detail that turns a good visit into a
+              cherished memory.
+            </p>
+          </div>
+          <div class="reveal reveal-delay-2">
+            <div
+              class="timeline"
+              style="border-left-color: rgba(159, 225, 203, 0.4)"
+            >
+              <div class="timeline-item" style="--dot-color: var(--navy-light)">
+                <h4 style="color: var(--navy-light)">Eco-friendly practices</h4>
+                <p style="color: rgba(253, 252, 250, 0.75); font-size: 0.88rem">
+                  Sustainable operations, natural landscaping, and a working
+                  organic farm.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <h4 style="color: var(--navy-light)">Farm-to-table dining</h4>
+                <p style="color: rgba(253, 252, 250, 0.75); font-size: 0.88rem">
+                  Our on-site farm supplies fresh produce for every meal
+                  prepared on the property.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <h4 style="color: var(--navy-light)">Personalised service</h4>
+                <p style="color: rgba(253, 252, 250, 0.75); font-size: 0.88rem">
+                  Every enquiry is handled individually. We don't do
+                  cookie-cutter; we do thoughtful.
+                </p>
+              </div>
+              <div class="timeline-item" style="padding-bottom: 0">
+                <h4 style="color: var(--navy-light)">Trusted by many</h4>
+                <p style="color: rgba(253, 252, 250, 0.75); font-size: 0.88rem">
+                  Families, couples, corporates, schools, and individuals trust
+                  Ndeiya House for their most important moments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NDEIYA FARM -->
+    <section class="section" id="farm">
+      <div class="container">
+        <div class="farm-feature">
+          <div class="farm-feature-img reveal">
+            <img
+              src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80"
+              alt="Ndeiya Farm"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <p class="eyebrow reveal">On-site</p>
+            <h2 class="reveal reveal-delay-1">Ndeiya Farm</h2>
+            <div class="divider reveal reveal-delay-2"></div>
+            <p class="reveal reveal-delay-2">
+              We have a well-invested farm landscape and greenhouses available
+              for Ndeiya House use as well as for educational purposes. What we
+              grow, we serve — adding a wholesome, organic touch to every meal.
+            </p>
+            <p class="reveal reveal-delay-3" style="margin-top: 1rem">
+              Our in-house farm supply includes a wide range of seasonal
+              produce, dairy, and eggs. Schools and groups are welcome to visit
+              for educational farm tours.
+            </p>
+            <div class="produce-grid reveal reveal-delay-3">
+              <div class="produce-item">🥬 Lettuce</div>
+              <div class="produce-item">🥦 Broccoli</div>
+              <div class="produce-item">🌿 Celery</div>
+              <div class="produce-item">🥦 Cauliflower</div>
+              <div class="produce-item">🌱 Kale</div>
+              <div class="produce-item">🥬 Spinach</div>
+              <div class="produce-item">🧅 Leeks</div>
+              <div class="produce-item">🥛 Milk</div>
+              <div class="produce-item">🥚 Eggs</div>
+            </div>
+            <div class="mt-4 reveal reveal-delay-4">
+              <a href="contact.html?type=Farm+Tour" class="btn btn-outline-dark"
+                >Book a farm visit →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO WE SERVE -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="eyebrow reveal">Our guests</p>
+          <h2 class="reveal reveal-delay-1">Trusted by all kinds of people</h2>
+        </div>
+        <div class="grid-4">
+          <div class="card reveal" style="text-align: center; padding: 2rem">
+            <div style="font-size: 2rem; margin-bottom: 1rem">👫</div>
+            <h4
+              style="
+                font-family: var(--font-display);
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+              "
+            >
+              Couples
+            </h4>
+            <p style="font-size: 0.85rem">
+              Getaways, wedding ceremonies & engagement shoots
+            </p>
+          </div>
+          <div
+            class="card reveal reveal-delay-1"
+            style="text-align: center; padding: 2rem"
+          >
+            <div style="font-size: 2rem; margin-bottom: 1rem">👨‍👩‍👧‍👦</div>
+            <h4
+              style="
+                font-family: var(--font-display);
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+              "
+            >
+              Families
+            </h4>
+            <p style="font-size: 0.85rem">
+              Holiday getaways, birthday parties & celebrations
+            </p>
+          </div>
+          <div
+            class="card reveal reveal-delay-2"
+            style="text-align: center; padding: 2rem"
+          >
+            <div style="font-size: 2rem; margin-bottom: 1rem">🏢</div>
+            <h4
+              style="
+                font-family: var(--font-display);
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+              "
+            >
+              Corporates
+            </h4>
+            <p style="font-size: 0.85rem">
+              Team building, meetings & private company events
+            </p>
+          </div>
+          <div
+            class="card reveal reveal-delay-3"
+            style="text-align: center; padding: 2rem"
+          >
+            <div style="font-size: 2rem; margin-bottom: 1rem">🏫</div>
+            <h4
+              style="
+                font-family: var(--font-display);
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+              "
+            >
+              Schools
+            </h4>
+            <p style="font-size: 0.85rem">
+              Educational farm tours & outdoor learning experiences
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Ready to escape the city?</h2>
+        <p>
+          Get in touch and we'll take care of every detail — from your arrival
+          to your last meal.
+        </p>
+        <div class="flex">
+          <a href="contact.html" class="btn btn-gold">Make an Enquiry</a>
+          <a href="rates.html" class="btn btn-outline">View Rates</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-logo">
+              <img src="logo.png" alt="Ndeiya House" />
+            </div>
+            <p class="footer-tagline">
+              "Some moments are meant to be celebrated in a place that feels
+              like home."
+            </p>
+            <div class="social-links">
+              <a href="https://instagram.com/ndeiyahouse" target="_blank">ig</a
+              ><a href="https://facebook.com/ndeiyahouse" target="_blank">fb</a>
+            </div>
+          </div>
+          <div>
+            <h5>Explore</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="rates.html">Rates</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Services</h5>
+            <ul class="footer-links">
+              <li><a href="services.html#accommodation">Accommodation</a></li>
+              <li><a href="services.html#weddings">Weddings</a></li>
+              <li><a href="services.html#events">Events & Parties</a></li>
+              <li><a href="services.html#team">Team Building</a></li>
+              <li><a href="services.html#photoshoots">Photoshoots</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Get in touch</h5>
+            <div class="footer-contact">
+              <div class="footer-contact-item">
+                <strong>Phone</strong>+254 712 630 306
+              </div>
+              <div class="footer-contact-item">
+                <strong>Email</strong>ndeiyahselimited@yahoo.com
+              </div>
+              <div class="footer-contact-item">
+                <strong>Location</strong>Renguti Link, Off Dagoretti Rd
+              </div>
+            </div>
+            <div class="mt-3">
+              <a
+                href="contact.html"
+                class="btn btn-primary"
+                style="width: 100%; justify-content: center"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Ndeiya House. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <a
+      href="https://wa.me/254712630306?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20Ndeiya%20House."
+      class="wa-float"
+      target="_blank"
+      aria-label="WhatsApp"
+      ><svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+        /></svg
+    ></a>
+    <script src="script.js"></script>
+  </body>
+</html>
